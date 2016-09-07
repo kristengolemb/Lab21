@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script>
+function validateForm() {
+    var x = document.forms["userForm"]["firstName"].value;
+    if (x == null || x == "") {
+        alert("Name must be filled out");
+        return false;
+    
+        var y = document.forms["userForm"]["lastName"].value;
+        if (y == null || y == "") {
+            alert("Name must be filled out");
+            return false;    
+    }
+</script>
+<link rel="stylesheet" type="text/css" href="Main.css">
+</head>
+<h1>Grand Circus Bootcamp Registration</h1>
+<form name="userForm" action="register.jsp"
+onsubmit="return validateForm()" method="post">
+
+	<!--   <onsubmit="return validateForm()" form method="post" action="register.jsp" data-toggle="validator" form id = "userForm">
+-->
+	<div class="form-group">
+		<label class="control-lable" for="firstName">First Name</label> <input
+			type="text" class="form-control" id="firstName"
+			placeholder="Enter your first name" name="firstName" required
+			data-maxlength="26" data-error="Name minimum length is 2" required>
+		<div class="help-block with-errors"></div>
+	</div>
+	<div class="form-group">
+		<label class="control-lable" for="lastName">Last Name</label> <input
+			type="text" class="form-control" id="lastName"
+			placeholder="Enter your last name" name="lastName" data-minlength="2"
+			data-maxlength="26" data-error="Name maximum length is 26" required>
+		<div class="help-block with-errors"></div>
+	</div>
+
+	<div class="form-group">
+		<label class="control-lable" for="userEmail">Email</label> <input
+			type="text" class="form-control" id="inputEmail" placeholder="Email"
+			name="email" data-error="Invalid email!"
+			pattern="^([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5})$"
+			required>
+		<div class="help-block with-errors"></div>
+	</div>
+
+	<div>
+		<h3>What bootcamp would you like to take?</h3>
+	</div>
+
+	<select name="course">
+		<option value="Java">Java</option>
+		<option value="JavaScript">JavaScript</option>
+		<option value="Part-Time Front-End">Part-Time Front-End</option>
+		<option value=".NET">.NET</option>
+	</select>
+
+	<div>
+		<h3>Would you like to receive the Grand Circus email newsletter?</h3>
+	</div>
+
+	<input type="radio" name="newsletter"
+		value="You are signed up to receive email updates from GC." checked>
+	Yes<br> <input type="radio" name="newsletter"
+		value="You are not currently signed up to receive updates by email.">
+	No<br>
+
+	<button type="submit" class="btn btn-default">Submit</button>
+</form>
+</html>
+<script src="https://code.jquery.com/jquery-3.1.0.min.js"
+		integrity="sha256-cCueBR6CsyA4/9szpPfrX3s49M9vUU5BgtiJj06wt/s="
+		crossorigin="anonymous"></script>
+	<script
+		src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
+		integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+		crossorigin="anonymous"></script>
+	<script src="validator.js"></script>

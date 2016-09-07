@@ -1,0 +1,25 @@
+@CHARSET "ISO-8859-1";
+
+h1 {
+	font-family: Helvetica; color : maroon;
+	margin-left: 40px;
+	color: maroon;
+}
+
+h3 {
+	font-family: Helvetica;
+	color: maroon;
+}
+
+input[type=text]:focus {
+	border: #555;
+}
+p {
+	font-family: Helvetica;
+	font-size: 14px;
+}
+div {
+	font-family: Helvetica;
+	font-size: 14px;
+}
+}
